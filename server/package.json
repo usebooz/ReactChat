@@ -1,0 +1,19 @@
+{
+    "name": "reactchatserver",
+    "version": "1.0.0",
+    "description": "React Chat Server",
+    "main": "index.js",
+    "scripts": {
+        "api": "nodemon src"
+    },
+    "type": "module",
+    "author": "Dmitry Sternyaev <dimastv@yandex.com>",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "nodemon": "^2.0.6"
+    },
+    "nodemonConfig": {
+        "ignore": "*.json"
+    }
+}

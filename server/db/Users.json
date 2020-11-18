@@ -1,0 +1,84 @@
+{
+    "data": [
+        {
+            "userId": "ant",
+            "userName": "Ant User",
+            "userPhoto": "/api/images/ant.png",
+            "password": "ant",
+            "bot": false,
+            "userAbout": "Ants are eusocial insects of the family Formicidae and, along with the related wasps and bees, belong to the order Hymenoptera. Ants appear in the fossil record across the globe in considerable diversity during the latest Early Cretaceous and early Late Cretaceous, suggesting an earlier origin."
+        },
+        {
+            "userId": "fish",
+            "userName": "Fish User",
+            "userPhoto": "/api/images/fish.png",
+            "password": "fish",
+            "bot": false,
+            "userAbout": "Fish are gill-bearing aquatic craniate animals that lack limbs with digits. They form a sister group to the tunicates, together forming the olfactores. Included in this definition are the living hagfish, lampreys, and cartilaginous and bony fish as well as various extinct related groups."
+        },
+        {
+            "userId": "lobster",
+            "userName": "Lobster User",
+            "userPhoto": "/api/images/lobster.png",
+            "password": "lobster",
+            "bot": false,
+            "userAbout": "Lobsters have long bodies with muscular tails, and live in crevices or burrows on the sea floor. Three of their five pairs of legs have claws, including the first pair, which are usually much larger than the others."
+        },
+        {
+            "userId": "gorilla",
+            "userName": "Gorilla User",
+            "userPhoto": "/api/images/gorilla.png",
+            "password": "gorilla",
+            "bot": false,
+            "userAbout": "Gorillas are ground-dwelling, predominantly herbivorous apes that inhabit the forest of central Sub-Saharan Africa. The genus Gorilla is divided into two species: the eastern gorillas and the western gorillas (both critically endangered), and either four or five subspecies."
+        },
+        {
+            "userId": "parrot",
+            "userName": "Parrot Bot",
+            "userPhoto": "/api/images/parrot.png",
+            "password": "parrot",
+            "bot": true,
+            "userAbout": "Parrots, also known as psittacines are birds of the roughly 393 species[citation needed] in 92 genera comprising the order Psittaciformes, found mostly in tropical and subtropical regions. "
+        },
+        {
+            "userId": "bee",
+            "userName": "Bee User",
+            "userPhoto": "/api/images/bee.png",
+            "password": "bee",
+            "bot": false,
+            "userAbout": "Bees are flying insects closely related to wasps and ants, known for their role in pollination and, in the case of the best-known bee species, the western honey bee, for producing honey. Bees are a monophyletic lineage within the superfamily Apoidea."
+        },
+        {
+            "userId": "crab",
+            "userName": "Crab User",
+            "userPhoto": "/api/images/crab.png",
+            "password": "crab",
+            "bot": false,
+            "userAbout": "Crabs are decapod crustaceans of the infraorder Brachyura, which typically have a very short projecting 'tail' (abdomen), usually hidden entirely under the thorax."
+        },
+        {
+            "userId": "crocodile",
+            "userName": "Crocodile User",
+            "userPhoto": "/api/images/crocodile.png",
+            "password": "crocodile",
+            "bot": false,
+            "userAbout": "Crocodiles (subfamily Crocodylinae) or true crocodiles are large semiaquatic reptiles that live throughout the tropics in Africa, Asia, the Americas and Australia. Crocodylinae, all of whose members are considered true crocodiles, is classified as a biological subfamily."
+        },
+        {
+            "userId": "duck",
+            "userName": "Duck User",
+            "userPhoto": "/api/images/duck.png",
+            "password": "duck",
+            "bot": false,
+            "userAbout": "Duck is the common name for numerous species in the waterfowl family Anatidae which also includes swans and geese. Ducks are divided among several subfamilies in the family Anatidae;"
+        },
+        {
+            "userId": "reindeer",
+            "userName": "Reindeer User",
+            "userPhoto": "/api/images/reindeer.png",
+            "password": "reindeer",
+            "bot": false,
+            "userAbout": "The reindeer (Rangifer tarandus), also known as the caribou in North America, is a species of deer with circumpolar distribution, native to Arctic, sub-Arctic, tundra, boreal, and mountainous regions of northern Europe, Siberia, and North America."
+        }
+    ]
+}
