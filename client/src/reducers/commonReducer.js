@@ -49,9 +49,9 @@ export const commonReducer = (store = initStore, action) => {
       commonStore = update(commonStore, { message: { $set: null } });
       break;
     case ADD_CHAT_START:
-    case ADD_MESSAGE_START:
-    case CHANGE_CHAT_START:
-    case CHANGE_MESSAGE_START:
+    // case ADD_MESSAGE_START:
+    // case CHANGE_CHAT_START:
+    // case CHANGE_MESSAGE_START:
     case LOGIN_START:
     case LOGOUT_START:
     case RECEIVE_CHATS_START:
@@ -68,17 +68,17 @@ export const commonReducer = (store = initStore, action) => {
         message: { $set: action.payload.message },
       });
     case ADD_CHAT_SUCCESS:
-    case ADD_MESSAGE_SUCCESS:
-    case CHANGE_CHAT_SUCCESS:
-    case CHANGE_MESSAGE_SUCCESS:
+    // case ADD_MESSAGE_SUCCESS:
+    // case CHANGE_CHAT_SUCCESS:
+    // case CHANGE_MESSAGE_SUCCESS:
     case LOGIN_SUCCESS:
     case LOGOUT_SUCCESS:
     case RECEIVE_CHATS_SUCCESS:
     case RECEIVE_CONTACTS_SUCCESS:
     case ADD_CHAT_ERROR:
-    case ADD_MESSAGE_ERROR:
-    case CHANGE_CHAT_ERROR:
-    case CHANGE_MESSAGE_ERROR:
+    // case ADD_MESSAGE_ERROR:
+    // case CHANGE_CHAT_ERROR:
+    // case CHANGE_MESSAGE_ERROR:
     case LOGIN_ERROR:
     case LOGOUT_ERROR:
     case RECEIVE_CHATS_ERROR:

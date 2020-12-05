@@ -8,7 +8,6 @@ import App from "../App/App.jsx";
 import Login from "../Login/Login.jsx";
 
 class Root extends React.Component {
-
     render() {
         return (
             <Switch>
@@ -17,7 +16,7 @@ class Root extends React.Component {
                     path='/'
                     render={
                         (props) => this.props.user
-                            ? <Redirect to={`/${this.props.user.userId}/`} />
+                            ? <Redirect to={`/user/${this.props.user.userId}/`} />
                             : <Redirect to="/login" />
                     }
                 />
@@ -28,7 +27,7 @@ class Root extends React.Component {
                 />
                 <Route
                     exact
-                    path='/:userId/'
+                    path='/user/:userId/'
                     component={App}
                     render={
                         (props) => !this.props.user
@@ -38,7 +37,7 @@ class Root extends React.Component {
                 />
                 <Route
                     exact
-                    path='/:userId/chat/:chatId'
+                    path='/user/:userId/chat/:chatId'
                     render={
                         (props) => !this.props.user
                             ? <Redirect to="/login" />

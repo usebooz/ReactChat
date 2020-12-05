@@ -1,1 +1,39 @@
-{"data":[{"userId":"ant","chatId":"fish","message":""},{"userId":"ant","chatId":"parrot","message":""},{"userId":"fish","chatId":"ant","message":""},{"userId":"crab","chatId":"ant","message":""},{"userId":"gorilla","chatId":"ant","message":""},{"userId":"reindeer","chatId":"ant","message":""},{"userId":"parrot","chatId":"ant","message":""}]}
+{
+    "data": [
+        {
+            "userId": "ant",
+            "chatId": "fish",
+            "message": ""
+        },
+        {
+            "userId": "fish",
+            "chatId": "ant",
+            "message": ""
+        },
+        {
+            "userId": "ant",
+            "chatId": "parrot",
+            "message": ""
+        },
+        {
+            "userId": "parrot",
+            "chatId": "ant",
+            "message": ""
+        },
+        {
+            "userId": "ant",
+            "chatId": "gorilla",
+            "message": ""
+        },
+        {
+            "userId": "ant",
+            "chatId": "lobster",
+            "message": ""
+        },
+        {
+            "userId": "ant",
+            "chatId": "bee",
+            "message": ""
+        }
+    ]
+}

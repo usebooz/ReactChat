@@ -7,7 +7,7 @@ import {
 } from "../constants/actionTypes";
 
 const initStore = {
-  contacts: [],
+  contacts: {},
 };
 
 export const contactsReducer = (store = initStore, action) => {
@@ -15,7 +15,7 @@ export const contactsReducer = (store = initStore, action) => {
     case RECEIVE_CONTACTS_SUCCESS:
       return update(store, {
         contacts: {
-          $set: action.payload.contacts,
+          $set: action.payload.contacts ? action.payload.contacts : {},
         },
       });
     default:

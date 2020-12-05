@@ -7,6 +7,8 @@ import { InputText } from "primereact/inputtext";
 import { Password } from "primereact/password";
 import { Button } from "primereact/button";
 
+import Loader from "../Loader/Loader.jsx";
+
 import { logIn } from "../../actions";
 
 class Login extends React.Component {
@@ -64,13 +66,15 @@ class Login extends React.Component {
                         />
                     </div>
                 </Card>
+                <Loader visible={this.props.spinner}/>
             </div>
         );
     }
 }
 
-const mapStateToProps = ({ usersReducer }) => ({
-    error: usersReducer.error
+const mapStateToProps = ({ usersReducer, commonReducer }) => ({
+    error: usersReducer.error,
+    spinner: commonReducer.spinner
 })
 
 export default connect(

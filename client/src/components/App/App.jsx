@@ -9,6 +9,7 @@ import { Toast } from "primereact/toast";
 import Chats from "../Chats/Chats.jsx";
 import Chat from "../Chat/Chat.jsx";
 import InitialContent from "../InitialContent/InitialContent.jsx";
+import Loader from "../Loader/Loader.jsx";
 
 class App extends React.Component {
 
@@ -34,6 +35,7 @@ class App extends React.Component {
           {this.props.chatId ? <Chat /> : InitialContent()}
         </div>
         <Toast ref={(el) => this.toast = el} position="bottom-left" />
+        <Loader visible={this.props.spinner}/>
       </div>
     );
   }
@@ -41,7 +43,8 @@ class App extends React.Component {
 
 const mapStateToProps = ({ chatsReducer, commonReducer }) => ({
   chatId: chatsReducer.chatId,
-  message: commonReducer.message
+  message: commonReducer.message,
+  spinner: commonReducer.spinner
 })
 
 export default connect(

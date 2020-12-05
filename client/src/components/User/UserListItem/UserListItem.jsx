@@ -13,10 +13,10 @@ export default function UserListItem(user, onClickClose) {
                 <h4 className="p-mt-0 p-mb-2">{user.userName}</h4>
                 <p className="p-my-0 p-text-ellipsis p-white-space-wrap p-overflow-hidden">{user.lastMessage}</p>
             </div>
-            <div className="p-ml-auto p-py-2 p-text-center">
+            <div className="p-ml-auto p-text-right">
                 {onClickClose ?
                     <i
-                        className="pi pi-times p-invisible p-link p-ml-auto p-mb-2"
+                        className="pi pi-times p-invisible p-link p-ml-auto p-mt-1 p-mb-3"
                         onClick={(e) => { e.stopPropagation(); onClickClose(user) }}
                     ></i> :
                     null

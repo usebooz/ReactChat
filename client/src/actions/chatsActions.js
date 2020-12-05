@@ -24,7 +24,7 @@ import {
 
 export const receiveChats = (userId) => ({
   [RSAA]: {
-    endpoint: `/api/${userId}/chats`,
+    endpoint: `/api/user/${userId}/chats`,
     method: "GET",
     types: [
       RECEIVE_CHATS_START,
@@ -40,7 +40,7 @@ export const receiveChats = (userId) => ({
 
 export const addChat = (userId, chatId) => ({
   [RSAA]: {
-    endpoint: `/api/${userId}/chat/${chatId}`,
+    endpoint: `/api/user/${userId}/chat/${chatId}`,
     method: "POST",
     headers: { "Content-Type": "application/json" },
     types: [
@@ -57,7 +57,7 @@ export const addChat = (userId, chatId) => ({
 
 export const removeChat = (userId, chatId) => ({
   [RSAA]: {
-    endpoint: `/api/${userId}/chat/${chatId}`,
+    endpoint: `/api/user/${userId}/chat/${chatId}`,
     method: "DELETE",
     types: [
       REMOVE_CHAT_START,
@@ -84,7 +84,7 @@ export const exitChat = () => ({
 
 export const changeChat = (userId, chatId, chatData) => ({
   [RSAA]: {
-    endpoint: `/api/${userId}/chat/${chatId}`,
+    endpoint: `/api/user/${userId}/chat/${chatId}`,
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(chatData),

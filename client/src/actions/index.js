@@ -8,7 +8,12 @@ import {
   exitChat,
   changeChat,
 } from "./chatsActions";
-import { addMessage, removeMessages, removeMessage } from "./messagesActions";
+import {
+  addMessage,
+  removeMessages,
+  removeMessage,
+  scrollMessage,
+} from "./messagesActions";
 import { initMessage } from "./commonActions";
 
 //Users
@@ -89,6 +94,9 @@ export const deleteMessage = (chatMessage) => (dispatch) => {
   dispatch(
     removeMessage(chatMessage.userId, chatMessage.chatId, chatMessage.messageId)
   );
+};
+export const scrollToMessage = (messageId) => (dispatch) => {
+  dispatch(scrollMessage(messageId));
 };
 
 //Common

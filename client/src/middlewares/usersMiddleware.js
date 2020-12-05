@@ -7,7 +7,7 @@ export const usersMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
       result = next(action);
-      store.dispatch(push(`/${action.payload.user.userId}/`));
+      store.dispatch(push(`/user/${action.payload.user.userId}/`));
       break;
     case LOGOUT_SUCCESS:
       store.dispatch(push("/login"));

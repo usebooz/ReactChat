@@ -16,11 +16,12 @@ import {
   CHANGE_MESSAGE_ERROR,
   CHANGE_MESSAGE_START,
   CHANGE_MESSAGE_SUCCESS,
+  SCROLL_MESSAGE,
 } from "../constants/actionTypes.js";
 
 export const addMessage = (userId, chatId, messageData) => ({
   [RSAA]: {
-    endpoint: `/api/${userId}/chat/${chatId}/message`,
+    endpoint: `/api/user/${userId}/chat/${chatId}/message`,
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(messageData),
@@ -38,7 +39,7 @@ export const addMessage = (userId, chatId, messageData) => ({
 
 export const removeMessages = (userId, chatId) => ({
   [RSAA]: {
-    endpoint: `/api/${userId}/chat/${chatId}/messages`,
+    endpoint: `/api/user/${userId}/chat/${chatId}/messages`,
     method: "DELETE",
     types: [
       REMOVE_MESSAGES_START,
@@ -54,7 +55,7 @@ export const removeMessages = (userId, chatId) => ({
 
 export const removeMessage = (userId, chatId, messageId) => ({
   [RSAA]: {
-    endpoint: `/api/${userId}/chat/${chatId}/message/${messageId}`,
+    endpoint: `/api/user/${userId}/chat/${chatId}/message/${messageId}`,
     method: "DELETE",
     types: [
       REMOVE_MESSAGE_START,
@@ -74,7 +75,7 @@ export const removeMessage = (userId, chatId, messageId) => ({
 
 export const changeMessage = (userId, chatId, messageId, messageData) => ({
   [RSAA]: {
-    endpoint: `/api/${userId}/chat/${chatId}/message/${messageId}`,
+    endpoint: `/api/user/${userId}/chat/${chatId}/message/${messageId}`,
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(messageData),
@@ -90,5 +91,12 @@ export const changeMessage = (userId, chatId, messageId, messageData) => ({
       },
       CHANGE_MESSAGE_ERROR,
     ],
+  },
+});
+
+export const scrollMessage = (messageId) => ({
+  type: SCROLL_MESSAGE,
+  payload: {
+    messageId: messageId,
   },
 });

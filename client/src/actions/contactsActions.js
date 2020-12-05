@@ -8,7 +8,7 @@ import {
 
 export const receiveContacts = (userId) => ({
   [RSAA]: {
-    endpoint: `/api/${userId}/contacts`,
+    endpoint: `/api/user/${userId}/contacts`,
     method: "GET",
     types: [
       RECEIVE_CONTACTS_START,

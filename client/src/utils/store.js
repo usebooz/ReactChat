@@ -22,10 +22,13 @@ const persistConfig = {
 export const store = createStore(
   persistReducer(persistConfig, createRootReducer(history)),
   initialStore,
-  compose(
-    applyMiddleware(routerMiddleware(history), ...middlewares),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  window.navigator.userAgent.includes("Chrome")
+    ? compose(
+        applyMiddleware(routerMiddleware(history), ...middlewares),
+        window.__REDUX_DEVTOOLS_EXTENSION__ &&
+          window.__REDUX_DEVTOOLS_EXTENSION__()
+      )
+    : compose(applyMiddleware(routerMiddleware(history), ...middlewares))
 );
 
 export const persistor = persistStore(store);

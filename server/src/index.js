@@ -22,26 +22,26 @@ server.use(express.json());
 server.use(express.static("./public/"));
 
 //Users
-server.get("/:userId", getUser);
+server.get("/user/:userId", getUser);
 server.post("/login", signInUser);
 server.post("/logout", signOutUser);
 
 //Contacts
-server.get("/:userId/contacts", getUserContacts);
+server.get("/user/:userId/contacts", getUserContacts);
 
 //Chats
-server.get("/:userId/chats", getUserChats);
-server.get("/:userId/chat/:chatId", getUserChat);
-server.post("/:userId/chat/:chatId", createUserChat);
-server.patch("/:userId/chat/:chatId", updateUserChat);
-server.delete("/:userId/chat/:chatId", deleteUserChat);
+server.get("/user/:userId/chats", getUserChats);
+server.get("/user/:userId/chat/:chatId", getUserChat);
+server.post("/user/:userId/chat/:chatId", createUserChat);
+server.patch("/user/:userId/chat/:chatId", updateUserChat);
+server.delete("/user/:userId/chat/:chatId", deleteUserChat);
 
 //Messages
-server.post("/:userId/chat/:chatId/message", createUserChatMessage);
-server.patch("/:userId/chat/:chatId/message/:messageId", updateUserChatMessage);
-server.delete("/:userId/chat/:chatId/messages", deleteUserChatMessages);
+server.post("/user/:userId/chat/:chatId/message", createUserChatMessage);
+server.patch("/user/:userId/chat/:chatId/message/:messageId", updateUserChatMessage);
+server.delete("/user/:userId/chat/:chatId/messages", deleteUserChatMessages);
 server.delete(
-  "/:userId/chat/:chatId/message/:messageId",
+  "/user/:userId/chat/:chatId/message/:messageId",
   deleteUserChatMessage
 );
 

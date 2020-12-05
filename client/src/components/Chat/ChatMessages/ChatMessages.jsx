@@ -10,14 +10,21 @@ import MessageItem from "../../MessageItem/MessageItem.jsx";
 import { confirm } from "../../ConfirmDialog/ConfirmDialog.jsx";
 
 class ChatMessages extends React.Component {
+    state = {
+        scrollMessage: null
+    }
     scrollToBottom = () => {
-        this.lastMessage && this.lastMessage.scrollIntoView({ behavior: "smooth" });
+        this.scrollMessage && this.scrollMessage.scrollIntoView({ behavior: "smooth" });
     }
     componentDidMount() {
         this.scrollToBottom();
     }
-    componentDidUpdate(props) {
-        this.scrollToBottom();
+    componentDidUpdate(props, state) {
+        if (state.scrollMessage !== this.scrollMessage) {
+            this.setState({ scrollMessage: this.scrollMessage })
+        } else {
+            this.scrollToBottom();
+        }
     }
     render() {
         const messages = [];
@@ -32,7 +39,10 @@ class ChatMessages extends React.Component {
                 messages.push(
                     <div
                         key={message.messageId}
-                        ref={(el) => this.lastMessage = el}>
+                        ref={(el) => {
+                            if (message.messageId === this.props.messageId)
+                                this.scrollMessage = el;
+                        }}>
                         <MessageItem
                             message={message}
                             justify={justify}
@@ -56,6 +66,7 @@ class ChatMessages extends React.Component {
 
 const mapStateToProps = (state) => ({
     chat: getSelectedChat(state),
+    messageId: state.messagesReducer.messageId
 })
 
 export default connect(

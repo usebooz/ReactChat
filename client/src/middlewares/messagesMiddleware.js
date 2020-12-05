@@ -1,10 +1,18 @@
-import { ADD_MESSAGE_SUCCESS, SWITCH_CHAT } from "../constants/actionTypes";
+import {
+  ADD_MESSAGE_SUCCESS,
+  SWITCH_CHAT,
+  CHANGE_LAST_MESSAGE,
+} from "../constants/actionTypes";
 
-import { changeMessage, addMessage } from "../actions/messagesActions";
+import {
+  changeMessage,
+  addMessage,
+  scrollMessage,
+} from "../actions/messagesActions";
 
 export const messagesMiddleware = (store) => (next) => (action) => {
   const { messagesReducer, chatsReducer } = store.getState();
-  let message, chat, result;
+  let message, chat, result, messageId;
   switch (action.type) {
     case ADD_MESSAGE_SUCCESS:
       result = next(action);
@@ -38,14 +46,22 @@ export const messagesMiddleware = (store) => (next) => (action) => {
     case SWITCH_CHAT:
       result = next(action);
       for (const [id, message] of Object.entries(messagesReducer.messages)) {
-        message.status === "SENT" &&
+        message.chatId === action.payload.chatId &&
           message.chatId === message.senderId &&
+          message.status === "SENT" &&
           store.dispatch(
             changeMessage(message.userId, message.chatId, message.messageId, {
               status: "READ",
             })
           );
+        if (message.chatId === action.payload.chatId) messageId = id;
       }
+      store.dispatch(scrollMessage(messageId));
+      break;
+
+    case CHANGE_LAST_MESSAGE:
+      result = next(action);
+      store.dispatch(scrollMessage(action.payload.message.messageId));
       break;
 
     default:

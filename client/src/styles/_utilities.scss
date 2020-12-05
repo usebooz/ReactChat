@@ -96,6 +96,12 @@
 .p-bg-dark {
     background-color: var(--dark-color);
 }
+.p-bg-primary {
+    background-color: var(--primary-color);
+}
+.p-bg-transparent {
+    background-color: transparent;
+}
 .p-color-light {
     color: var(--light-color);
 }
@@ -125,6 +131,11 @@
     overflow: hidden;
 }
 
+//Word break
+.p-break-all {
+    word-break: break-all;
+}
+
 //Visibility
 .p-visible {
     visibility: visible;
@@ -137,4 +148,14 @@
 }
 .p-hover-invisible:hover .p-visible {
     visibility: hidden;
+}
+
+//Flex
+
+.p-flex-grow-1 {
+    flex-grow: 1;
+}
+
+.p-flex-shrink-1 {
+    flex-shrink: 1;
 }

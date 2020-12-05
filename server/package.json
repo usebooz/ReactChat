@@ -4,7 +4,7 @@
     "description": "React Chat Server",
     "main": "index.js",
     "scripts": {
-        "api": "nodemon src"
+        "start": "nodemon src"
     },
     "type": "module",
     "author": "Dmitry Sternyaev <dimastv@yandex.com>",

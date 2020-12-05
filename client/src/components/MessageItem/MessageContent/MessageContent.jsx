@@ -14,11 +14,11 @@ export default function MessageContent(message, onClickClose) {
                     null
                 }
                 {message.userId === message.senderId && message.status === "READ" ?
-                    <i className="pi pi-check " style={{ fontSize: "0.75rem" }}></i> :
+                    <i className="pi pi-check p-mt-auto" style={{ fontSize: "0.75rem" }}></i> :
                     null
                 }
                 {message.userId === message.senderId && message.status === "SENT" ?
-                    <i className="pi pi-clock " style={{ fontSize: "0.75rem" }}></i> :
+                    <i className="pi pi-clock p-mt-auto" style={{ fontSize: "0.75rem" }}></i> :
                     null
                 }
             </div>

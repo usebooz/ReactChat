@@ -15,7 +15,7 @@ import {
 } from "../constants/actionTypes";
 
 const initStore = {
-  chats: [],
+  chats: {},
   chatId: "",
 };
 
@@ -25,7 +25,7 @@ export const chatsReducer = (store = initStore, action) => {
     case RECEIVE_CHATS_SUCCESS:
       return update(store, {
         chats: {
-          $set: action.payload.chats,
+          $set: action.payload.chats ? action.payload.chats : {},
         },
       });
 
@@ -125,7 +125,7 @@ export const chatsReducer = (store = initStore, action) => {
           },
         },
       });
-
+      
     default:
       return store;
   }

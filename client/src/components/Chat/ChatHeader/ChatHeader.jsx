@@ -53,7 +53,7 @@ class ChatHeader extends React.Component {
                 <Button
                     icon="pi pi-search"
                     tooltip="Search"
-                    disabled={true}
+                    onClick={this.props.onShowChatSearch}
                     className="p-button-rounded p-button-text"
                 />
                 <Button

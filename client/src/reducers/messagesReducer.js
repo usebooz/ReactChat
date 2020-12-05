@@ -7,10 +7,12 @@ import {
   REMOVE_MESSAGE_SUCCESS,
   REMOVE_CHAT_SUCCESS,
   CHANGE_MESSAGE_SUCCESS,
+  SCROLL_MESSAGE,
 } from "../constants/actionTypes";
 
 const initStore = {
-  messages: [],
+  messages: {},
+  messageId: "",
 };
 
 export const messagesReducer = (store = initStore, action) => {
@@ -19,7 +21,7 @@ export const messagesReducer = (store = initStore, action) => {
     case RECEIVE_CHATS_SUCCESS:
       return update(store, {
         messages: {
-          $set: action.payload.messages,
+          $set: action.payload.messages ? action.payload.messages : {},
         },
       });
 
@@ -55,6 +57,13 @@ export const messagesReducer = (store = initStore, action) => {
       return update(store, {
         messages: {
           $merge: action.payload.messages,
+        },
+      });
+
+    case SCROLL_MESSAGE:
+      return update(store, {
+        messageId: {
+          $set: action.payload.messageId,
         },
       });
 
